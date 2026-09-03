@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-  <html lang="es">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Da Dina × La Miga — Caso de éxito</title>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Da Dina × La Miga — Caso de éxito</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
-  <style>
-  :root {
-    --azul: #1A1AFF;
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #1A1AFF;
   --coral: #FF6B4A;
-      --crema: #F0EDE4;
-      --negro: #0A0A0A;
+  --crema: #F0EDE4;
+  --negro: #0A0A0A;
   --gris: #5A5A5A;
   --linea: #E2DFDA;
-    }
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: var(--crema); color: var(--negro); padding-bottom: 88px; }
@@ -39,7 +39,7 @@ body { font-family: 'Inter', sans-serif; background: var(--crema); color: var(--
 .block-title { font-family: 'Inter Tight', sans-serif; font-weight: 800; font-size: 28px; line-height: 1.15; color: var(--negro); margin-bottom: 36px; }
 .block-dark .block-title { color: white; }
 
-  .diag-list { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-bottom: 12px; }
+.diag-list { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-bottom: 12px; }
 .diag-item { display: flex; gap: 14px; align-items: flex-start; }
 .diag-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); flex-shrink: 0; margin-top: 7px; }
 .diag-text { font-size: 16px; line-height: 1.6; color: var(--gris); }
@@ -79,7 +79,7 @@ table.data td.neg { color: var(--gris); font-weight: 500; }
 .cta-section p { font-size: 14px; color: var(--gris); margin-top: 14px; }
 
 .nosotros-logo { width: 110px; height: auto; margin-bottom: 40px; display: block; }
-nosotros-text { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 22px; }
+.nosotros-text { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 22px; }
 .nosotros-text:last-child { margin-bottom: 0; }
 .block-cta { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 32px; background: var(--coral); color: white; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 17px; padding: 18px 24px; border-radius: 12px; text-decoration: none; width: 100%; }
 .block-cta svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
@@ -96,6 +96,112 @@ nosotros-text { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,0.6)
   .cta-bar { padding: 14px 60px 18px; max-width: 760px; left: 50%; right: auto; transform: translateX(-50%); border-radius: 16px 16px 0 0; border-left: 1px solid var(--linea); border-right: 1px solid var(--linea); }
 }
 </style>
-  </head>
-  <body>
-  
+</head>
+<body>
+
+<div class="cta-bar">
+  <a href="tel:+34659667733" class="cta-phone">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    Llamar
+  </a>
+  <a href="https://wa.me/34659667733" class="cta-wa" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<section class="hero">
+  <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.02 48.31" aria-label="La Miga"><path fill="#f5f1e5" d="M22.46,19.93l6.11-10.09c3.88-6.35,7.71-9.85,13.97-9.85,1.11,0,2.18.19,3.25.44v7.91c-.73-.19-1.31-.24-1.99-.24-2.81,0-4.66,1.26-6.16,3.54l-7.81,12.95,3.64,2.33c2.81,1.75,4.75,2.47,7.08,2.47,2.67,0,4.36-.87,5.38-3.05l8.15,3.1c-2.04,5.53-6.98,8.15-13.39,8.15-4.36,0-7.95-1.12-11.83-3.78l-3.64-2.47c-3.54,4.36-7.66,6.3-12.9,6.3-7.28,0-12.32-3.98-12.32-10.19s5.24-10.62,12.12-10.62c3.64,0,7.03,1.16,10.33,3.1M12.61,30.12c2.57,0,4.22-1.12,5.82-3.4-2.52-1.6-4.12-2.38-5.97-2.38-2.08,0-3.54,1.12-3.54,2.86s1.5,2.91,3.69,2.91"/><path fill="#f5f1e5" d="M55.82,30.12c0-4.51,3.49-6.98,11.64-8.2l9.56-1.41c-.49-1.6-2.18-2.43-5.82-2.43-3.93,0-6.01,1.12-6.84,3.01l-8.92-.97c1.45-5,6.84-8.44,16.05-8.44s14.6,3.68,14.6,10.57v14.74h-8.05l-.39-2.86c-2.57,2.28-6.84,3.54-11.2,3.49-6.06,0-10.62-2.47-10.62-7.52M68,31.43c4.27,0,9.36-1.55,9.36-5.14v-.24l-9.12,1.46c-2.47.39-3.44.92-3.44,2.08,0,1.26,1.02,1.84,3.2,1.84"/><path fill="#f5f1e5" d="M97.86,14.74c3.06-10.19,9.46-14.74,18.72-14.74,3.2,0,6.06.68,8.49,1.89,2.76-1.21,5.77-1.89,9.12-1.89,11.2,0,18.33,7.37,18.33,19.06,0,5.53-1.5,11.54-5.58,17.95h-10.23c4.95-7.32,6.64-13.09,6.64-17.75,0-6.98-3.3-11.35-9.89-11.35-.39,0-.73,0-1.11.05,3.44,4.51,5.14,10.14,5.14,14.65,0,7.91-5.34,12.71-13.43,12.71s-13.39-4.8-13.39-12.71c0-4.8,2.23-10.33,6.21-14.74h-.05c-5.53,0-8.39,2.91-10.04,8.39l-6.11,20.76h-9.6l6.79-22.26ZM128.42,22.65c0-4.22-1.36-8.44-3.93-11.25-3.25,3.06-4.75,7.61-4.75,11.25,0,3.06,1.7,4.95,4.32,4.95s4.37-1.89,4.37-4.95"/><path fill="#f5f1e5" d="M162.71.44c3.01,0,5.04,1.84,5.04,4.61s-2.09,4.7-5.09,4.7-5-1.94-5-4.7,2.04-4.61,5.04-4.61M158.24,12.32h8.92v24.69h-8.92V12.32Z"/><path fill="#f5f1e5" d="M171.58,39.67l9.46-1.79c1.16,2.33,3.15,3.1,7.18,3.1,5.34,0,8.05-2.13,8.05-5.77v-.92c-2.57,1.46-5.82,2.33-9.51,2.33-9.21,0-15.42-5.19-15.42-12.46s6.3-12.46,15.52-12.46c3.88,0,7.18.87,9.75,2.47l.44-1.84h8.15v22.79c0,7.81-6.26,13.19-17.27,13.19-10.04,0-14.99-3.83-16.34-8.63M188.41,29.34c4.8,0,7.81-1.99,7.81-5.19s-3.06-5.09-7.86-5.09c-5.04,0-7.81,1.94-7.81,5.09s2.81,5.19,7.86,5.19"/><path fill="#f5f1e5" d="M209.75,30.12c0-4.51,3.49-6.98,11.64-8.2l9.55-1.41c-.49-1.6-2.18-2.43-5.82-2.43-3.93,0-6.01,1.12-6.84,3.01l-8.92-.97c1.45-5,6.84-8.44,16.05-8.44s14.6,3.68,14.6,10.57v14.74h-8.05l-.39-2.86c-2.57,2.28-6.84,3.54-11.2,3.49-6.06,0-10.62-2.47-10.62-7.52M221.93,31.43c4.27,0,9.36-1.55,9.36-5.14v-.24l-9.12,1.46c-2.47.39-3.44.92-3.44,2.08,0,1.26,1.02,1.84,3.2,1.84"/></svg>
+  <span class="hero-eyebrow">Caso de éxito · GBP + Instagram</span>
+  <h1 class="hero-title">Da Dina Ristorante: de perfil parado a mejor mes del proyecto</h1>
+  <p class="hero-sub">Un trimestre de trabajo (junio–agosto 2026) llevó a Da Dina de una presencia digital inactiva a su mejor mes en Google Business Profile e Instagram desde que arrancamos.</p>
+</section>
+
+<section class="block kpi-block">
+  <span class="block-num">Agosto 2026 · el mejor mes hasta la fecha</span>
+  <h2 class="block-title">Los números del cierre de campaña</h2>
+  <div class="metricas-row">
+    <div class="metrica">
+      <span class="m-num">+364%</span>
+      <span class="m-label">descubrimiento en Google Maps y Búsqueda interanual</span>
+    </div>
+    <div class="metrica">
+      <span class="m-num">+59%</span>
+      <span class="m-label">alcance en Instagram frente al mes anterior</span>
+    </div>
+    <div class="metrica">
+      <span class="m-num">52</span>
+      <span class="m-label">toques al enlace de la bio — la primera señal de conversión medible</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="gbp">
+  <span class="block-num">01 / Google Business Profile</span>
+  <h2 class="block-title">La ficha pasó de invisible a un canal de captación real</h2>
+  <div class="table-wrap">
+    <table class="data">
+      <tr><th>Métrica</th><th>Jul → Ago</th><th>Mensual</th><th>Interanual</th></tr>
+      <tr><td>Interacciones totales</td><td class="num">624 → 709</td><td class="pos">+13,6%</td><td class="pos">+44,4%</td></tr>
+      <tr><td>Vistas de la carta</td><td class="num">124 → 142</td><td class="pos">+14,5%</td><td class="pos">+105,8%</td></tr>
+      <tr><td>Solicitudes "cómo llegar"</td><td class="num">324 → 418</td><td class="pos">+29,0%</td><td class="pos">+62,0%</td></tr>
+      <tr><td>Llamadas realizadas</td><td class="num">175 → 148</td><td class="neg">-15,4%</td><td class="neg">-9,8%</td></tr>
+    </table>
+  </div>
+  <ul class="diag-list">
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text"><strong>27.084 personas</strong> descubrieron el perfil en agosto — un +364,2% interanual, con el 91% llegando desde Google Maps en móvil.</span></li>
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text">Tres de los cuatro indicadores crecen mes a mes, y los cuatro comparados con agosto de 2025 muestran subidas fuertes — hasta +105,8% en vistas de carta.</span></li>
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text">Las llamadas son el único indicador a la baja este mes — con vistas de carta y "cómo llegar" creciendo tanto, buena parte de ese tráfico se resuelve por otras vías (visita directa, WhatsApp) más que por pérdida de interés.</span></li>
+  </ul>
+  <span class="solution-label">Términos de búsqueda</span>
+  <p class="solution-text">El término de marca "dina" acumula ya 918 impresiones, y entre las variantes de "da dina restaurante y pizzeria..." suman 796 más — la búsqueda directa de marca dejó de ser marginal y ya tiene peso real en el conjunto.</p>
+</section>
+
+<section class="block" id="instagram">
+  <span class="block-num">02 / Instagram</span>
+  <h2 class="block-title">El mejor mes de la cuenta en alcance y visualizaciones</h2>
+  <div class="table-wrap">
+    <table class="data">
+      <tr><th>Métrica</th><th>Jul → Ago</th><th>Variación</th></tr>
+      <tr><td>Visualizaciones</td><td class="num">38,9 mil → 47,3 mil</td><td class="pos">+21,6%</td></tr>
+      <tr><td>Alcance</td><td class="num">13,5 mil → 21,4 mil</td><td class="pos">+58,8%</td></tr>
+      <tr><td>Visitas al perfil</td><td class="num">738 → 872</td><td class="pos">+18,2%</td></tr>
+      <tr><td>Interacciones</td><td class="num">720 → 690</td><td class="neg">-4,2%</td></tr>
+      <tr><td>Seguidores nuevos</td><td class="num">112 → 71</td><td class="neg">-36,6%</td></tr>
+    </table>
+  </div>
+  <div class="consequence">
+    <span class="m-highlight">52 toques</span>
+    <p>en el enlace de la biografía este mes, según la actividad del perfil de la app — <em>la señal más clara hasta ahora de que el contenido genera tráfico real hacia fuera de la plataforma</em>, algo que no se había visto en meses anteriores. La cuenta cerró agosto con 1.771 seguidores (+45 netos en el mes).</p>
+  </div>
+  <ul class="diag-list">
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text">Agosto es, con diferencia, el mejor mes de la cuenta en alcance y visualizaciones desde que arrancó el trabajo.</span></li>
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text">Interacciones y seguidores nuevos bajan ligeramente frente a julio, pero el crecimiento en alcance y visitas al perfil compensa de sobra — es un mes de exposición mucho mayor, no uno flojo.</span></li>
+    <li class="diag-item"><span class="diag-dot"></span><span class="diag-text">El Reel del proceso de la masa (15 ago) fue el contenido más fuerte del mes: 3.192 de alcance y 4.026 visualizaciones — uno de los mejores de todo el proyecto. El contenido de elaboración y artesanía es el que mejor conecta con la audiencia.</span></li>
+  </ul>
+  <div class="tag-row">
+    <span class="tag"><strong>1.771</strong> seguidores</span>
+    <span class="tag"><strong>12</strong> publicaciones en agosto</span>
+    <span class="tag"><strong>7,7x</strong> alcance de Reels vs. carrusel</span>
+  </div>
+</section>
+
+<section class="block block-dark" id="cierre">
+  <span class="block-num">Cierre de campaña · jun–ago 2026</span>
+  <h2 class="block-title">Tres meses después, un perfil con actividad real y resultados medibles</h2>
+  <p class="nosotros-text">El trimestre junio–agosto cierra con el mejor balance de los tres meses: Instagram dobla su alcance frente a julio y bate récord de visualizaciones, Google Business Profile crece con fuerza interanual en prácticamente todos los indicadores, y aparece por primera vez una señal de conversión real medible — 52 toques al enlace de la biografía.</p>
+  <p class="nosotros-text">En tres meses, el perfil de Instagram pasó de actividad mínima a generar entre 13 y 21 mil de alcance mensual de forma sostenida, y el Business Profile de Google multiplicó su descubrimiento un +364,2% interanual. Resultados que respaldan el trabajo hecho.</p>
+</section>
+
+<section class="cta-section">
+  <a href="https://wa.me/34659667733" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    ¿Quieres resultados así en tu restaurante?
+  </a>
+  <p>Hablemos — sin compromiso.</p>
+</section>
+
+<p class="foot">© 2026 La Miga · Datos de Google Business Profile e Instagram · Periodo jun–ago 2026</p>
+
+</body>
+</html>
