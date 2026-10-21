@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Diagnóstico Deba Sant Cugat</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@700;800&display=swap">
+<style>
+  /* Layout: diagnóstico La Miga — hero azul, bloques sobre crema, cajas negras de conclusión, columna de lectura de 760px */
+  :root {
+    color-scheme: light;
+    --azul:  #1A1AFF;
+    --coral: #FF6B4A;
+    --crema: #F0EDE4;
+    --blanco:#FFFFFF;
+    --negro: #0A0A0A;
+    --gris:  #55524C;
+    --linea: #E2DFDA;
+    --verde: #1F8A5B;
+    --display: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+    --body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--body); background: var(--crema); color: var(--negro); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 760px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 800; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* HERO */
+  .hero { background: var(--azul); color: var(--blanco); }
+  .hero .wrap { padding-block: 56px 56px; display: flex; flex-direction: column; gap: 22px; }
+  .logo { width: 116px; height: auto; margin-bottom: 20px; }
+  .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; }
+  .hero .eyebrow { color: rgba(255,255,255,.55); }
+  .hero h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.04; }
+  .hero-sub { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,.72); max-width: 560px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: rgba(255,255,255,.6); padding-top: 8px; border-top: 1px solid rgba(255,255,255,.18); }
+
+  /* KPI */
+  .kpi { background: var(--coral); color: var(--blanco); }
+  .kpi .wrap { padding-block: 56px 60px; }
+  .kpi .eyebrow { color: rgba(255,255,255,.7); display: block; margin-bottom: 20px; }
+  .kpi h2 { font-size: clamp(26px, 5vw, 34px); line-height: 1.1; margin-bottom: 36px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px 32px; }
+  .kpi-item { display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(255,255,255,.3); padding-top: 16px; }
+  .kpi-num { font-family: var(--display); font-weight: 800; font-size: 44px; line-height: 1; }
+  .kpi-lab { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,.85); }
+
+  /* BLOQUES */
+  .block { border-bottom: 1px solid var(--linea); }
+  .block .wrap { padding-block: 64px 68px; display: flex; flex-direction: column; gap: 28px; }
+  .block .eyebrow { color: var(--coral); }
+  .block h2 { font-size: clamp(26px, 5vw, 32px); line-height: 1.1; }
+  .lead { font-size: 17px; color: var(--gris); max-width: 620px; }
+
+  .diag-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+  .diag-list li { display: grid; grid-template-columns: 7px 1fr; gap: 14px; align-items: start; font-size: 16px; color: var(--gris); }
+  .diag-list li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); margin-top: 9px; }
+  .diag-list strong { color: var(--negro); font-weight: 600; }
+
+  .consequence { background: var(--negro); color: rgba(255,255,255,.72); border-radius: 16px; padding: 26px 24px; font-size: 17px; line-height: 1.7; }
+  .consequence em { color: var(--blanco); font-style: normal; font-weight: 500; }
+
+  .solution { display: flex; flex-direction: column; gap: 8px; }
+  .solution .label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); }
+  .solution p { color: var(--gris); }
+
+  /* GRÁFICOS */
+  .chart { background: var(--blanco); border: 1px solid var(--linea); border-radius: 16px; padding: 22px 20px 18px; display: flex; flex-direction: column; gap: 14px; }
+  .chart-title { font-family: var(--display); font-weight: 700; font-size: 15px; }
+  .chart-note { font-size: 12.5px; color: var(--gris); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--gris); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+  .hbar-list { display: flex; flex-direction: column; gap: 9px; }
+  .hbar { display: grid; grid-template-columns: 44px 1fr 46px; gap: 10px; align-items: center; font-size: 13px; }
+  .hbar .m { color: var(--gris); }
+  .hbar .t { text-align: right; font-weight: 600; }
+  .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--crema); }
+  .seg-web { background: var(--azul); }
+  .seg-tel { background: #7C7CFF; }
+  .seg-res { background: var(--coral); }
+  .hbar.partial .m::after { content: "*"; }
+  .hbar.partial .track { opacity: .55; }
+
+  .mix { display: flex; flex-direction: column; gap: 12px; }
+  .mix-row { display: flex; flex-direction: column; gap: 5px; font-size: 14px; }
+  .mix-head { display: flex; justify-content: space-between; gap: 12px; }
+  .mix-head span:last-child { font-weight: 600; white-space: nowrap; }
+  .mix-bar { height: 10px; border-radius: 5px; background: var(--crema); overflow: hidden; }
+  .mix-bar i { display: block; height: 100%; background: var(--azul); }
+  .mix-row.hi .mix-bar i { background: var(--coral); }
+
+  .vbars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; align-items: end; height: 170px; position: relative; padding-top: 18px; }
+  .vbar { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; height: 100%; min-width: 0; }
+  .vbar b { font-size: 10.5px; font-weight: 600; color: var(--negro); }
+  .vbar i { width: 100%; background: var(--azul); border-radius: 3px 3px 0 0; display: block; }
+  .vbar.after i { background: #A9A9FF; }
+  .vbar.partial i { background: repeating-linear-gradient(135deg, #A9A9FF 0 4px, #C9C9FF 4px 8px); }
+  .vlabels { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; font-size: 11px; color: var(--gris); text-align: center; }
+  .split { display: flex; gap: 10px; font-size: 12.5px; color: var(--gris); justify-content: space-between; flex-wrap: wrap; border-top: 1px dashed var(--linea); padding-top: 10px; }
+  .split strong { color: var(--negro); }
+
+  /* TABLAS */
+  .table-wrap { overflow-x: auto; background: var(--blanco); border: 1px solid var(--linea); border-radius: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 520px; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  th { font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gris); background: #FAF8F3; }
+  tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td .sub { display: block; font-size: 12.5px; color: var(--gris); }
+
+  /* KEYWORDS */
+  .kw-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .kw { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+  .kw.main { border-color: var(--azul); border-width: 1.5px; }
+  .kw-tag { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); }
+  .kw-es { font-family: var(--display); font-weight: 700; font-size: 17px; line-height: 1.25; }
+  .kw-ca { font-size: 14px; color: var(--gris); }
+  .kw-note { font-size: 13px; color: var(--gris); border-top: 1px solid var(--linea); padding-top: 8px; margin-top: 2px; }
+
+  /* NECESITAMOS */
+  .dark { background: var(--negro); color: var(--blanco); }
+  .dark .wrap { padding-block: 64px 68px; display: flex; flex-direction: column; gap: 28px; }
+  .dark .eyebrow { color: rgba(255,255,255,.45); }
+  .dark h2 { font-size: clamp(26px, 5vw, 32px); line-height: 1.1; }
+  .dark .lead { color: rgba(255,255,255,.65); }
+  .need-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .need-list li { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.14); align-items: baseline; }
+  .need-list li:last-child { border-bottom: none; }
+  .need-what { font-size: 16px; color: var(--blanco); }
+  .need-what span { display: block; font-size: 13.5px; color: rgba(255,255,255,.55); margin-top: 3px; }
+  .owner { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--coral); white-space: nowrap; }
+
+  /* TIMELINE */
+  .timeline { display: flex; flex-direction: column; }
+  .t-item { display: grid; grid-template-columns: 112px 1fr; gap: 6px 20px; padding: 22px 0; border-bottom: 1px solid var(--linea); }
+  .t-item:last-child { border-bottom: none; }
+  .t-when { font-family: var(--display); font-weight: 800; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--azul); padding-top: 3px; }
+  .t-body { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .t-body h3 { font-size: 18px; line-height: 1.25; }
+  .t-body ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .t-body li { position: relative; padding-left: 22px; font-size: 15px; color: var(--gris); }
+  .t-body li::before { content: "→"; position: absolute; left: 0; color: var(--azul); font-weight: 600; }
+  .t-body li strong { color: var(--negro); font-weight: 600; }
+  .t-item.event .t-when { color: var(--coral); }
+  .t-item.event li::before { color: var(--coral); }
+
+  .consider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .consider { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .consider h3 { font-size: 16px; line-height: 1.3; }
+  .consider p { font-size: 14.5px; color: var(--gris); }
+  .consider .measure { font-size: 12.5px; color: var(--azul); font-weight: 500; margin-top: auto; padding-top: 6px; }
+
+  .kpi-track { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .kpi-track div { border-top: 2px solid var(--azul); padding-top: 10px; font-size: 14px; color: var(--gris); }
+  .kpi-track strong { display: block; font-family: var(--display); font-size: 16px; color: var(--negro); margin-bottom: 4px; }
+
+
+  /* ACCIONES */
+  .action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .action { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .action.main { border: 1.5px solid var(--azul); }
+  .action-tag { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--azul); }
+  .action-big { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1; color: var(--coral); }
+  .action h3 { font-size: 17px; line-height: 1.25; }
+  .action p { font-size: 14px; color: var(--gris); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: var(--crema); border-radius: 999px; padding: 4px 11px; font-size: 12.5px; color: var(--negro); }
+  @media (max-width: 520px) { .action-grid { grid-template-columns: 1fr; } }
+  footer .wrap { padding-block: 40px 56px; font-size: 13px; color: var(--gris); display: flex; flex-direction: column; gap: 8px; }
+
+  @media (max-width: 520px) {
+    .t-item { grid-template-columns: 1fr; }
+    .need-list li { grid-template-columns: 1fr; }
+    .vbar b { font-size: 9px; }
+    .vlabels { font-size: 10px; }
+    .kpi-num { font-size: 38px; }
+  }
+  a:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.02 48.31" aria-label="La Miga"><path fill="#f5f1e5" d="M22.46,19.93l6.11-10.09c3.88-6.35,7.71-9.85,13.97-9.85,1.11,0,2.18.19,3.25.44v7.91c-.73-.19-1.31-.24-1.99-.24-2.81,0-4.66,1.26-6.16,3.54l-7.81,12.95,3.64,2.33c2.81,1.75,4.75,2.47,7.08,2.47,2.67,0,4.36-.87,5.38-3.05l8.15,3.1c-2.04,5.53-6.98,8.15-13.39,8.15-4.36,0-7.95-1.12-11.83-3.78l-3.64-2.47c-3.54,4.36-7.66,6.3-12.9,6.3-7.28,0-12.32-3.98-12.32-10.19s5.24-10.62,12.12-10.62c3.64,0,7.03,1.16,10.33,3.1M12.61,30.12c2.57,0,4.22-1.12,5.82-3.4-2.52-1.6-4.12-2.38-5.97-2.38-2.08,0-3.54,1.12-3.54,2.86s1.5,2.91,3.69,2.91"/><path fill="#f5f1e5" d="M55.82,30.12c0-4.51,3.49-6.98,11.64-8.2l9.56-1.41c-.49-1.6-2.18-2.43-5.82-2.43-3.93,0-6.01,1.12-6.84,3.01l-8.92-.97c1.45-5,6.84-8.44,16.05-8.44s14.6,3.68,14.6,10.57v14.74h-8.05l-.39-2.86c-2.57,2.28-6.84,3.54-11.2,3.49-6.06,0-10.62-2.47-10.62-7.52M68,31.43c4.27,0,9.36-1.55,9.36-5.14v-.24l-9.12,1.46c-2.47.39-3.44.92-3.44,2.08,0,1.26,1.02,1.84,3.2,1.84"/><path fill="#f5f1e5" d="M97.86,14.74c3.06-10.19,9.46-14.74,18.72-14.74,3.2,0,6.06.68,8.49,1.89,2.76-1.21,5.77-1.89,9.12-1.89,11.2,0,18.33,7.37,18.33,19.06,0,5.53-1.5,11.54-5.58,17.95h-10.23c4.95-7.32,6.64-13.09,6.64-17.75,0-6.98-3.3-11.35-9.89-11.35-.39,0-.73,0-1.11.05,3.44,4.51,5.14,10.14,5.14,14.65,0,7.91-5.34,12.71-13.43,12.71s-13.39-4.8-13.39-12.71c0-4.8,2.23-10.33,6.21-14.74h-.05c-5.53,0-8.39,2.91-10.04,8.39l-6.11,20.76h-9.6l6.79-22.26ZM128.42,22.65c0-4.22-1.36-8.44-3.93-11.25-3.25,3.06-4.75,7.61-4.75,11.25,0,3.06,1.7,4.95,4.32,4.95s4.37-1.89,4.37-4.95"/><path fill="#f5f1e5" d="M162.71.44c3.01,0,5.04,1.84,5.04,4.61s-2.09,4.7-5.09,4.7-5-1.94-5-4.7,2.04-4.61,5.04-4.61M158.24,12.32h8.92v24.69h-8.92V12.32Z"/><path fill="#f5f1e5" d="M171.58,39.67l9.46-1.79c1.16,2.33,3.15,3.1,7.18,3.1,5.34,0,8.05-2.13,8.05-5.77v-.92c-2.57,1.46-5.82,2.33-9.51,2.33-9.21,0-15.42-5.19-15.42-12.46s6.3-12.46,15.52-12.46c3.88,0,7.18.87,9.75,2.47l.44-1.84h8.15v22.79c0,7.81-6.26,13.19-17.27,13.19-10.04,0-14.99-3.83-16.34-8.63M188.41,29.34c4.8,0,7.81-1.99,7.81-5.19s-3.06-5.09-7.86-5.09c-5.04,0-7.81,1.94-7.81,5.09s2.81,5.19,7.86,5.19"/><path fill="#f5f1e5" d="M209.75,30.12c0-4.51,3.49-6.98,11.64-8.2l9.55-1.41c-.49-1.6-2.18-2.43-5.82-2.43-3.93,0-6.01,1.12-6.84,3.01l-8.92-.97c1.45-5,6.84-8.44,16.05-8.44s14.6,3.68,14.6,10.57v14.74h-8.05l-.39-2.86c-2.57,2.28-6.84,3.54-11.2,3.49-6.06,0-10.62-2.47-10.62-7.52M221.93,31.43c4.27,0,9.36-1.55,9.36-5.14v-.24l-9.12,1.46c-2.47.39-3.44.92-3.44,2.08,0,1.26,1.02,1.84,3.2,1.84"/></svg>
+    <span class="eyebrow">Diagnóstico de partida · Deba Sant Cugat</span>
+    <h1>Deba ya genera interés.<br>Falta convertirlo en reservas.</h1>
+    <p class="hero-sub">Hemos revisado la ficha de Google, la cuenta de Instagram y la web para fijar el punto de partida del piloto. La visibilidad está. Lo que se pierde es el último paso, el que lleva de "me interesa" a "tengo mesa".</p>
+    <div class="hero-meta">
+      <span>Google Business Profile · may–oct 2026</span>
+      <span>Instagram · nov 2025–oct 2026</span>
+      <span>Web (GA4) · feb–oct 2026</span>
+      <span>Preparado por La Miga · 21/10/2026</span>
+    </div>
+  </div>
+</header>
+
+<section class="kpi">
+  <div class="wrap">
+    <span class="eyebrow">En seis cifras</span>
+    <h2>El punto de partida</h2>
+    <div class="kpi-grid">
+      <div class="kpi-item"><span class="kpi-num num">34.040</span><span class="kpi-lab">personas vieron la ficha de Google en 6 meses, el 93 % desde el móvil</span></div>
+      <div class="kpi-item"><span class="kpi-num num">0</span><span class="kpi-lab">reservas desde el botón de Google en septiembre y octubre (entre 57 y 74 al mes en mayo, junio y julio)</span></div>
+      <div class="kpi-item"><span class="kpi-num num">8 %</span><span class="kpi-lab">de las búsquedas que muestran la ficha son por el nombre de Deba</span></div>
+      <div class="kpi-item"><span class="kpi-num num">−55 %</span><span class="kpi-lab">de alcance típico por reel desde abril respecto a noviembre–marzo</span></div>
+      <div class="kpi-item"><span class="kpi-num num">1,7 %</span><span class="kpi-lab">de las visitas al perfil de Instagram terminan en clic al enlace</span></div>
+      <div class="kpi-item"><span class="kpi-num num">54 %</span><span class="kpi-lab">de los usuarios de la web llegan desde Google. La web todavía no mide cuántos reservan</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Google Business Profile · Conversión</span>
+    <h2>La demanda sigue ahí.<br>El botón de reserva, no.</h2>
+    <p class="lead">Desde septiembre, la ficha no registra ni una reserva directa. En el mismo mes, los clics a la web marcan su máximo. Todo apunta a que, con el cambio de sistema de reservas, el botón "Reservar" de Google se desconectó y la gente acaba reservando desde la web, con un paso más.</p>
+
+    <div class="chart" role="img" aria-label="Intención de reserva mensual desde la ficha de Google: mayo 535, junio 414, julio 419, agosto 295, septiembre 468, octubre 239 hasta el día 21. Las reservas directas caen a cero en septiembre y octubre.">
+      <span class="chart-title">Intención de reserva desde la ficha, por mes</span>
+      <div class="legend">
+        <span><i class="sw seg-web"></i>Clics a la web</span>
+        <span><i class="sw seg-tel"></i>Llamadas</span>
+        <span><i class="sw seg-res"></i>Reservas con el botón de Google</span>
+      </div>
+      <div class="hbar-list">
+        <div class="hbar"><span class="m">May</span><div class="track"><i class="seg-web" style="width:63.6%"></i><i class="seg-tel" style="width:22.6%"></i><i class="seg-res" style="width:13.8%"></i></div><span class="t num">535</span></div>
+        <div class="hbar"><span class="m">Jun</span><div class="track"><i class="seg-web" style="width:44.9%"></i><i class="seg-tel" style="width:21.9%"></i><i class="seg-res" style="width:10.7%"></i></div><span class="t num">414</span></div>
+        <div class="hbar"><span class="m">Jul</span><div class="track"><i class="seg-web" style="width:49.5%"></i><i class="seg-tel" style="width:17.2%"></i><i class="seg-res" style="width:11.6%"></i></div><span class="t num">419</span></div>
+        <div class="hbar"><span class="m">Ago</span><div class="track"><i class="seg-web" style="width:44.9%"></i><i class="seg-tel" style="width:6.5%"></i><i class="seg-res" style="width:3.7%"></i></div><span class="t num">295</span></div>
+        <div class="hbar"><span class="m">Sep</span><div class="track"><i class="seg-web" style="width:76.6%"></i><i class="seg-tel" style="width:10.8%"></i></div><span class="t num">468</span></div>
+        <div class="hbar partial"><span class="m">Oct</span><div class="track"><i class="seg-web" style="width:37.4%"></i><i class="seg-tel" style="width:7.3%"></i></div><span class="t num">239</span></div>
+      </div>
+      <span class="chart-note">* Octubre, hasta el día 21. Valores mensuales aproximados, tomados de los gráficos de la ficha; cuadran con los totales del periodo: 1.688 clics a la web, 462 llamadas, 213 reservas, 1.167 solicitudes de cómo llegar.</span>
+    </div>
+
+    <ul class="diag-list">
+      <li><span><strong>La tendencia de fondo es plana.</strong> Mayo es el mejor mes. Agosto cae por vacaciones y septiembre se recupera, pero se queda un 13 % por debajo de mayo. Como Deba abrió en noviembre de 2025, aún no tenemos el mismo periodo del año anterior para comparar.</span></li>
+      <li><span><strong>Las llamadas son lo que más cae:</strong> de unas 120 al mes en primavera a unas 50 en otoño.</span></li>
+      <li><span><strong>La ficha no enseña el producto.</strong> Solo 157 personas abrieron la carta en 6 meses (0,5 % de las que vieron la ficha). Tampoco hay fotos. Para un restaurante de menú degustación, el plato tiene que ser lo primero que se ve en Maps.</span></li>
+    </ul>
+
+    <div class="consequence">
+      <p>El 63 % de quienes ven la ficha lo hacen desde Google Maps en el móvil. <em>Es el escaparate principal de Deba, y ahora mismo no deja reservar con un toque, no enseña los platos y no permite medir cuántas reservas trae.</em></p>
+    </div>
+
+    <div class="solution">
+      <span class="label">Cómo lo resolvemos</span>
+    </div>
+    <div class="action-grid">
+      <div class="action main"><span class="action-tag">Conversión</span><h3>Botón «Reservar» reactivado</h3><p>Conectado al sistema de reservas, para reservar desde Maps con un toque.</p></div>
+      <div class="action main"><span class="action-tag">Medición</span><h3>Enlaces con UTM</h3><p>La web y la reserva etiquetadas, para que GA4 atribuya cada reserva a la ficha.</p></div>
+      <div class="action"><span class="action-tag">Escaparate</span><h3>Fotos de platos y sala</h3><p>Lo primero que se ve en Maps: los platos con más margen, el menú degustación y el espacio.</p></div>
+      <div class="action"><span class="action-tag">Escaparate</span><h3>Carta completa</h3><p>Con el menú degustación destacado y su precio.</p></div>
+      <div class="action"><span class="action-tag">Posicionamiento</span><h3>Categorías</h3><div class="chips"><span class="chip">Restaurante japonés (principal)</span><span class="chip">Restaurante de sushi</span></div></div>
+      <div class="action"><span class="action-tag">Posicionamiento</span><h3>Descripción con palabras clave</h3><div class="chips"><span class="chip">Japonés en Sant Cugat</span><span class="chip">Menú degustación japonés</span><span class="chip">Cocina japonesa de autor</span></div></div>
+      <div class="action"><span class="action-tag">Reputación</span><h3>Respuesta a todas las reseñas</h3><p>Con palabras clave, en castellano y en catalán.</p></div>
+      <div class="action"><span class="action-tag">Actividad</span><h3>Publicaciones en la ficha</h3><p>Cada semana: aniversario, menú y temporada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Google Business Profile · Búsquedas</span>
+    <h2>Google ya encuentra a Deba.<br>Pocos la buscan por su nombre.</h2>
+    <p class="lead">18.607 búsquedas mostraron la ficha en 6 meses. Casi seis de cada diez son genéricas, como "restaurantes", y Maps las resuelve por cercanía. Es el tráfico más difícil de conseguir y Deba ya lo tiene. Lo que falta es marca.</p>
+
+    <div class="chart">
+      <span class="chart-title">Qué búsquedas muestran la ficha</span>
+      <div class="mix">
+        <div class="mix-row"><div class="mix-head"><span>Genéricas ("restaurantes", "restaurant", "Sant Cugat del Vallès"…)</span><span class="num">10.758 · 58 %</span></div><div class="mix-bar"><i style="width:58%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Cocina + Sant Cugat ("sushi Sant Cugat", "japonés Sant Cugat"…)</span><span class="num">4.398 · 24 %</span></div><div class="mix-bar"><i style="width:24%"></i></div></div>
+        <div class="mix-row hi"><div class="mix-head"><span>Por el nombre ("Deba Sant Cugat")</span><span class="num">1.528 · 8 %</span></div><div class="mix-bar"><i style="width:8%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Cocina sin ubicación ("sushi", "japonés")</span><span class="num">584 · 3 %</span></div><div class="mix-bar"><i style="width:3%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Resto (fuera del top 15)</span><span class="num">~1.340 · 7 %</span></div><div class="mix-bar"><i style="width:7%"></i></div></div>
+      </div>
+      <span class="chart-note">Unas 255 búsquedas de marca al mes. A partir de ahora será un KPI mensual: es la cifra que mejor mide si el contenido y los anuncios están construyendo recuerdo.</span>
+    </div>
+
+    <ul class="diag-list">
+      <li><span><strong>"Sushi" se busca más que "japonés":</strong> unas 2.880 búsquedas frente a unas 2.100. Lo usaremos, pero con menos peso y siempre con matiz, para no atraer a quien busca sushi a 25 €.</span></li>
+      <li><span><strong>Hay búsqueda en catalán</strong> ("restaurant", "restaurants", "restaurant japonès"): unas 1.250. Las respuestas a reseñas y los textos cubrirán los dos idiomas.</span></li>
+    </ul>
+
+    <span class="eyebrow">Palabras clave que trabajaremos</span>
+    <div class="kw-grid">
+      <div class="kw main">
+        <span class="kw-tag">Principal</span>
+        <span class="kw-es">Japonés en Sant Cugat · Restaurante japonés en Sant Cugat</span>
+        <span class="kw-ca">Japonès a Sant Cugat · Restaurant japonès a Sant Cugat</span>
+        <span class="kw-note">Ficha de Google, captions, respuestas a reseñas y anuncios.</span>
+      </div>
+      <div class="kw main">
+        <span class="kw-tag">Producto</span>
+        <span class="kw-es">Menú degustación japonés en Sant Cugat</span>
+        <span class="kw-ca">Menú degustació japonès a Sant Cugat</span>
+        <span class="kw-note">Conecta la búsqueda con el producto que define a Deba.</span>
+      </div>
+      <div class="kw">
+        <span class="kw-tag">Posicionamiento</span>
+        <span class="kw-es">Cocina japonesa de autor en Sant Cugat · Experiencia gastronómica en Sant Cugat</span>
+        <span class="kw-ca">Cuina japonesa d'autor a Sant Cugat · Experiència gastronòmica a Sant Cugat</span>
+        <span class="kw-note">En captions, con el matiz "con influencias asiáticas".</span>
+      </div>
+      <div class="kw">
+        <span class="kw-tag">Uso puntual</span>
+        <span class="kw-es">Sushi en Sant Cugat</span>
+        <span class="kw-ca">Sushi a Sant Cugat</span>
+        <span class="kw-note">Volumen alto. Siempre acompañada de "de autor" o "nigiris".</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Instagram · Alcance</span>
+    <h2>Lo que mejor funcionó fue lo que tenía fecha y plazas limitadas</h2>
+    <p class="lead">Entre noviembre y marzo, un reel típico llegaba a unas 2.000 personas. Desde abril se queda en unas 900. Ese mes es cuando el contenido pasa de anunciar experiencias limitadas a explicar el menú de temporada paso a paso.</p>
+
+    <div class="chart" role="img" aria-label="Alcance mediano por reel y mes, de noviembre de 2025 a octubre de 2026.">
+      <span class="chart-title">Alcance típico por reel (mediana), por mes</span>
+      <div class="vbars">
+        <div class="vbar"><b class="num">2.521</b><i style="height:100%"></i></div>
+        <div class="vbar"><b class="num">1.446</b><i style="height:57%"></i></div>
+        <div class="vbar"><b class="num">1.998</b><i style="height:79%"></i></div>
+        <div class="vbar"><b class="num">1.914</b><i style="height:76%"></i></div>
+        <div class="vbar"><b class="num">2.096</b><i style="height:83%"></i></div>
+        <div class="vbar after"><b class="num">961</b><i style="height:38%"></i></div>
+        <div class="vbar after"><b class="num">1.227</b><i style="height:49%"></i></div>
+        <div class="vbar after"><b class="num">823</b><i style="height:33%"></i></div>
+        <div class="vbar after"><b class="num">841</b><i style="height:33%"></i></div>
+        <div class="vbar after"><b class="num">1.192</b><i style="height:47%"></i></div>
+        <div class="vbar after"><b class="num">775</b><i style="height:31%"></i></div>
+        <div class="vbar after partial"><b class="num">550</b><i style="height:22%"></i></div>
+      </div>
+      <div class="vlabels"><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct*</span></div>
+      <div class="split">
+        <span>Nov–mar: <strong class="num">529</strong> seguidores ganados con reels</span>
+        <span>Abr–oct: <strong class="num">39</strong> seguidores ganados con reels</span>
+      </div>
+      <span class="chart-note">47 reels propios. * Octubre, hasta el día 21.</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Los 5 reels con más alcance</th><th class="r">Alcance</th><th class="r">Seguidores</th></tr></thead>
+        <tbody>
+          <tr><td>Ronqueo de Invierno, capítulo 2 · 13/02<span class="sub">Corte de atún · solo martes y miércoles · 8 noches</span></td><td class="r">25.193</td><td class="r">307</td></tr>
+          <tr><td>Miércoles de Ostras · 18/01<span class="sub">Solo 14 comensales · cada miércoles de enero</span></td><td class="r">5.174</td><td class="r">44</td></tr>
+          <tr><td>Resumen del Ronqueo · 31/03<span class="sub">Cierre de una experiencia</span></td><td class="r">3.269</td><td class="r">38</td></tr>
+          <tr><td>Inauguración · 15/11<span class="sub">Apertura</span></td><td class="r">2.685</td><td class="r">21</td></tr>
+          <tr><td>Ampliación del Ronqueo · 01/03<span class="sub">"Lo ampliamos los martes y miércoles"</span></td><td class="r">2.566</td><td class="r">20</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="diag-list">
+      <li><span><strong>Un solo reel, el del Ronqueo, generó el 24 % de las visualizaciones del año</strong> y el 54 % de los seguidores ganados con reels.</span></li>
+      <li><span><strong>Los cinco mejores reels anuncian algo que se acaba:</strong> 8 noches, 14 comensales, una ampliación, un cierre. Y casi todos atacan martes y miércoles, las noches que más hay que llenar.</span></li>
+      <li><span><strong>La duración pesa, pero no lo explica todo.</strong> Los reels de más de 90 segundos (junio y julio) tienen la mitad de alcance. En agosto y septiembre se recortaron a unos 30 segundos y el alcance no se recuperó: falta el motivo para reservar ya.</span></li>
+      <li><span><strong>El contenido de terceros funciona y apenas se ha usado.</strong> El reel de @_oh.foodie llegó a 2.207 personas y tuvo 55 comentarios, la cifra más alta del año.</span></li>
+    </ul>
+
+    <div class="consequence">
+      <p>El contenido de Deba está bien hecho. <em>Pero desde abril cuenta el menú sin decir por qué hay que reservar esta semana.</em> El aniversario del 7 de noviembre, con solo 96 plazas, encaja con lo que ya ha demostrado funcionar.</p>
+    </div>
+
+    <div class="solution">
+      <span class="label">Cómo lo resolvemos</span>
+    </div>
+    <div class="action-grid">
+      <div class="action"><span class="action-tag">Guion</span><h3>Gancho en los primeros 3 segundos</h3><p>Que quien no conoce Deba se quede a ver el vídeo.</p></div>
+      <div class="action"><span class="action-tag">Formato</span><h3>Reels de 30 a 60 segundos</h3><p>Los de más de 90 segundos tienen la mitad de alcance.</p></div>
+      <div class="action"><span class="action-tag">Urgencia</span><h3>CTA con fecha</h3><div class="chips"><span class="chip">Solo este mes</span><span class="chip">Quedan X plazas</span><span class="chip">Últimas mesas</span></div></div>
+      <div class="action"><span class="action-tag">Propuesta</span><h3>Experiencias limitadas de martes a jueves</h3><p>Fecha y plazas cerradas, para dar motivo a reservar sin bajar precios.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Instagram · De la visita a la reserva</span>
+    <h2>Casi nadie pasa del perfil a reservar</h2>
+    <p class="lead">En 12 meses hubo 11.600 visitas al perfil y 192 clics en el enlace. Todos los copies cierran con "reserva en la bio", pero el camino hasta la mesa no está despejado.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Indicador</th><th class="r">Nov–mar</th><th class="r">Abr–oct</th></tr></thead>
+        <tbody>
+          <tr><td>Clics al enlace desde stories</td><td class="r">66</td><td class="r">3</td></tr>
+          <tr><td>Stories publicadas al mes (media)</td><td class="r">35</td><td class="r">13</td></tr>
+          <tr><td>Guardados en reels</td><td class="r">321</td><td class="r">62</td></tr>
+          <tr><td>Veces compartido en reels</td><td class="r">590</td><td class="r">157</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="diag-list">
+      <li><span><strong>Las stories dejaron de llevar a reservar.</strong> Desde abril apenas generan clics al enlace, y además se publican menos.</span></li>
+      <li><span><strong>El perfil no enseña el producto.</strong> Todo son reels. Quien entra no ve de un vistazo los platos, el precio del menú ni un botón de reserva claro.</span></li>
+      <li><span><strong>El público es el adecuado, pero está poco concentrado en Sant Cugat.</strong> El 82 % tiene entre 25 y 54 años (el grupo más grande, 35–44). Solo el 18,5 % es de Sant Cugat; Barcelona (11 %) y Sabadell (9 %) pesan mucho.</span></li>
+    </ul>
+
+    <div class="consequence">
+      <p>Instagram despierta el interés, pero lo deja escapar en el último paso. <em>Un botón "Reservar" en el perfil y un enlace de reserva en cada story de venta son los cambios con más impacto inmediato.</em></p>
+    </div>
+
+    <div class="solution">
+      <span class="label">Cómo lo resolvemos</span>
+    </div>
+    <div class="action-grid">
+      <div class="action main"><span class="action-tag">Reserva</span><span class="action-big num">3 / semana</span><h3>Stories con enlace a reservas</h3><p>Mínimo tres stories a la semana con sticker de enlace a la URL de reservas.</p></div>
+      <div class="action main"><span class="action-tag">Urgencia</span><span class="action-big num">2 / semana</span><h3>Stories de menú con fecha límite</h3><p>Con enlace al menú y cuenta atrás: se acaba el 06/11.</p></div>
+      <div class="action"><span class="action-tag">Perfil</span><span class="action-big num">3</span><h3>Publicaciones fijadas</h3><div class="chips"><span class="chip">Menú de temporada · experiencia del mes</span><span class="chip">Reel de la propuesta gastronómica</span><span class="chip">Storytelling de Eduardo</span></div></div>
+      <div class="action"><span class="action-tag">Perfil</span><span class="action-big num">4</span><h3>Historias destacadas</h3><div class="chips"><span class="chip">Experiencia</span><span class="chip">Carta</span><span class="chip">Compartidos</span><span class="chip">Reservar</span></div></div>
+      <div class="action"><span class="action-tag">Producto</span><h3>Fotografía de producto en carruseles</h3><p>Con CTA de urgencia o de reserva y palabras clave en el copy.</p></div>
+      <div class="action"><span class="action-tag">Conversión</span><h3>Botón «Reservar» en el perfil</h3><p>Y enlace de la bio directo a la reserva, con UTM.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Web · Google Analytics 4</span>
+    <h2>La web recibe tráfico.<br>Todavía no sabemos cuántas reservas cierra.</h2>
+    <p class="lead">Entre febrero y octubre, la web tuvo 6.122 usuarios y 9.300 sesiones. Más de la mitad llegaron desde Google, lo que confirma que la ficha y el buscador son la puerta principal. Pero la web aún no registra cuándo alguien reserva, así que hoy no podemos saber qué canal llena mesas.</p>
+
+    <div class="chart">
+      <span class="chart-title">De dónde llegan los usuarios de la web</span>
+      <div class="mix">
+        <div class="mix-row"><div class="mix-head"><span>Google (búsqueda orgánica)</span><span class="num">3.335 · 54 %</span></div><div class="mix-bar"><i style="width:54.5%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Directo (escriben la dirección o llegan sin origen identificado)</span><span class="num">1.998 · 33 %</span></div><div class="mix-bar"><i style="width:32.6%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Instagram</span><span class="num">580 · 9 %</span></div><div class="mix-bar"><i style="width:9.5%"></i></div></div>
+        <div class="mix-row hi"><div class="mix-head"><span>ChatGPT</span><span class="num">72 · 1,2 %</span></div><div class="mix-bar"><i style="width:1.2%"></i></div></div>
+        <div class="mix-row"><div class="mix-head"><span>Bing</span><span class="num">55 · 0,9 %</span></div><div class="mix-bar"><i style="width:0.9%"></i></div></div>
+      </div>
+      <span class="chart-note">Primera fuente de cada usuario. Los clics desde la ficha de Google llegan sin etiquetar y se mezclan con el orgánico, por eso no aparecen como canal propio.</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Página de entrada</th><th class="r">Sesiones</th><th class="r">Tiempo medio</th></tr></thead>
+        <tbody>
+          <tr><td>Inicio</td><td class="r">6.857 · 74 %</td><td class="r">42 s</td></tr>
+          <tr><td>Menú degustación</td><td class="r">1.344 · 14 %</td><td class="r">25 s</td></tr>
+          <tr><td>Carta</td><td class="r">637 · 7 %</td><td class="r">21 s</td></tr>
+          <tr><td>Sin página registrada (not set)<span class="sub">Fallo de etiquetado</span></td><td class="r">333 · 4 %</td><td class="r">1 s</td></tr>
+          <tr><td>Contacto</td><td class="r">98 · 1 %</td><td class="r">24 s</td></tr>
+          <tr><td>Menú especial Ronqueo de Invierno</td><td class="r">35 · 0,4 %</td><td class="r">30 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="diag-list">
+      <li><span><strong>El pico de la web coincide con el Ronqueo.</strong> A mediados de febrero, la web llegó a unos 540 usuarios en una semana, el triple de lo habitual. Después se estabiliza en unos 200 a la semana en primavera, unos 140 en verano y entre 170 y 190 en septiembre y octubre.</span></li>
+      <li><span><strong>Instagram trae visitas, pero son las menos implicadas:</strong> 31 segundos de media y solo 24 usuarios que repiten.</span></li>
+      <li><span><strong>Las páginas de producto retienen poco:</strong> 25 segundos en el menú degustación y 21 en la carta. La página del Ronqueo solo tuvo 35 sesiones, porque la comunicación no llevaba a ella.</span></li>
+      <li><span><strong>ChatGPT ya envía visitas.</strong> Son 72 usuarios, pocos, pero es una señal de que la IA ya recomienda Deba. Las reseñas, las menciones y la prensa lo refuerzan.</span></li>
+      <li><span><strong>Bing es pequeño, pero trae visitas de calidad:</strong> 55 usuarios con 52 segundos de media, la mejor interacción después de Google.</span></li>
+      <li><span><strong>Hay 333 sesiones sin página registrada.</strong> Es un fallo de etiquetado que corregiremos al configurar Google Tag Manager.</span></li>
+    </ul>
+
+    <div class="consequence">
+      <p>El objetivo es de 120 reservas al trimestre. <em>Medir la reserva es lo primero:</em> sin un evento de reserva en GA4 no sabremos qué canal funciona ni cuánto cuesta cada reserva.</p>
+    </div>
+
+    <div class="solution">
+      <span class="label">Cómo lo resolvemos</span>
+    </div>
+    <div class="action-grid">
+      <div class="action main"><span class="action-tag">Medición</span><h3>Google Tag Manager</h3><p>Lo instalamos y configuramos el clic en «Reservar» y la reserva completada como eventos clave en GA4.</p></div>
+      <div class="action main"><span class="action-tag">Medición</span><h3>Píxel de Meta</h3><p>Para medir las reservas que traen los anuncios y crear audiencias.</p></div>
+      <div class="action"><span class="action-tag">Medición</span><h3>UTM en todos los enlaces</h3><div class="chips"><span class="chip">Ficha de Google</span><span class="chip">Bio</span><span class="chip">Stories</span><span class="chip">Anuncios</span></div></div>
+      <div class="action"><span class="action-tag">Conversión</span><h3>Reserva visible nada más entrar</h3><p>En la página del menú degustación y en una página propia del aniversario, con TheFork integrado.</p></div>
+      <div class="action"><span class="action-tag">Visibilidad</span><h3>Potenciar Bing</h3><p>Trabajar sus requisitos: Bing Webmaster Tools, sitemap, IndexNow y Bing Places. Es la fuente con mejores reportes y su índice alimenta respuestas de IA como ChatGPT.</p></div>
+      <div class="action"><span class="action-tag">Calidad del dato</span><h3>Sesiones sin página registrada</h3><p>Revisar las 333 sesiones «not set» al instalar Tag Manager.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">Accesos y materiales</span>
+    <h2>Para arrancar esta semana</h2>
+    <p class="lead">Lo que falta para activar los cambios y medir el piloto desde el primer día.</p>
+    <ul class="need-list">
+      <li><span class="need-what">Instalaremos Google Tag Manager y el píxel de Meta<span>Para medir las reservas en GA4 y preparar los anuncios.</span></span><span class="owner">La Miga</span></li>
+      <li><span class="need-what">Fotos de platos y sala<span>Para la carta de Google, la ficha y los carruseles de Instagram.</span></span><span class="owner">Pedro</span></li>
+      <li><span class="need-what">Código HTML de TheFork para la web y configuración del botón de reservas<span>Para integrar la reserva en la web y medir los clics en «Reservar».</span></span><span class="owner">Pedro · TheFork</span></li>
+      <li><span class="need-what">Parking</span><span class="owner">Para hablar</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Calendario</span>
+    <h2>Next steps</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <span class="t-when">Esta semana<br>21–27 oct</span>
+        <div class="t-body">
+          <h3>Abrir el camino a la reserva y lanzar la lista de espera</h3>
+          <ul>
+            <li><strong>Google:</strong> botón de reserva, UTM, fotos, carta, categorías y descripción con palabras clave.</li>
+            <li><strong>Instagram:</strong> botón «Reservar», enlace de la bio a la reserva, publicaciones fijadas y destacados.</li>
+            <li><strong>Web:</strong> instalación de Google Tag Manager y del píxel de Meta, y eventos de reserva en GA4.</li>
+            <li><strong>Aniversario:</strong> landing de lista de espera (nombre, teléfono y email) con el mensaje «experiencia exclusiva, solo 96 personas, acceso prioritario a la reserva», y stories para lanzarla.</li>
+            <li><strong>Medios locales:</strong> búsqueda de medios de Sant Cugat (radio y prensa) para anunciar la experiencia de aniversario.</li>
+            <li><strong>Rodaje:</strong> fecha pendiente de confirmar.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-item">
+        <span class="t-when">28 oct–6 nov</span>
+        <div class="t-body">
+          <h3>Apertura de reservas del aniversario</h3>
+          <ul>
+            <li>Envío del precio y del enlace de reserva a quienes se hayan apuntado a la lista de espera, y apertura de reservas.</li>
+            <li>Anuncios con al menos 5 creatividades, cada una con una entrada distinta.</li>
+            <li>Stories con enlace a reservas, mínimo 3 por semana.</li>
+            <li>Nota de prensa a los medios locales.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-item event">
+        <span class="t-when">7 nov</span>
+        <div class="t-body">
+          <h3>Aniversario · 96 plazas</h3>
+          <ul>
+            <li>Dos turnos de mediodía y dos turnos de noche.</li>
+            <li>Cobertura en directo y material para el resumen, el formato que mejor funcionó al cerrar el Ronqueo.</li>
+            <li>Medición: reservas del evento por origen (Cover Manager, TheFork y GA4).</li>
+            <li>El menú de aniversario se mantiene hasta final de diciembre.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Próximas semanas</span>
+    <h2>Lo que tendremos en cuenta</h2>
+    <div class="consider-grid">
+      <div class="consider">
+        <h3>Experiencias limitadas de martes a jueves</h3>
+        <p>Un formato con fecha y plazas cerradas, renovado cada mes, en la línea del Ronqueo y las Ostras. Añade valor a las noches flojas sin tocar el precio. El menú de aniversario, que se mantiene hasta final de diciembre, hace de ancla.</p>
+        <span class="measure">Se mide en ocupación de martes a jueves (Cover Manager)</span>
+      </div>
+      <div class="consider">
+        <h3>Meta Ads en dos fases</h3>
+        <p>Primero se impulsan publicaciones existentes para que la cuenta aprenda. Después, vídeos de unos 15 segundos con enlace directo a la reserva. Segmentación por radio desde Sant Cugat, sin depender solo de los seguidores actuales.</p>
+        <span class="measure">Se mide en coste por reserva (Meta + GA4). Depende de reactivar la cuenta publicitaria</span>
+      </div>
+      <div class="consider">
+        <h3>Que otros hablen de Deba</h3>
+        <p>Una o dos colaboraciones al mes con creadores locales o gastronómicos, y presencia en prensa o radio local. Suma alcance y posicionamiento en Google.</p>
+        <span class="measure">Se mide en alcance y búsquedas de marca</span>
+      </div>
+      <div class="consider">
+        <h3>Reseñas como palanca de SEO local</h3>
+        <p>Responder todas las reseñas con palabras clave, en castellano y en catalán, y poner en marcha un sistema para pedirlas en sala.</p>
+        <span class="measure">Se mide en número de reseñas y nota media</span>
+      </div>
+      <div class="consider">
+        <h3>Fotografía de producto en el perfil</h3>
+        <p>Carruseles con los platos de más margen y el menú degustación, para que quien llegue al perfil vea enseguida qué va a comer.</p>
+        <span class="measure">Se mide en guardados y clics al enlace</span>
+      </div>
+      <div class="consider">
+        <h3>Temporada de noviembre y diciembre</h3>
+        <p>Llevar la demanda del fin de semana, que se llena, a las noches de martes a jueves: cenas de amigas y pausas entre compras navideñas.</p>
+        <span class="measure">Se mide en ocupación por franja</span>
+      </div>
+    </div>
+
+    <span class="eyebrow">KPIs que revisaremos cada 4 semanas</span>
+    <div class="kpi-track">
+      <div><strong>Reservas por canal</strong>Google, Instagram, web, TheFork y teléfono</div>
+      <div><strong>Ocupación por franja</strong>Foco en las noches de martes a jueves</div>
+      <div><strong>Búsquedas de marca</strong>Línea base: unas 255 al mes</div>
+      <div><strong>Clics a reservar</strong>Ficha de Google, perfil de Instagram y web</div>
+      <div><strong>Reservas medidas en la web</strong>Evento clave en GA4 desde que esté configurado</div>
+      <div><strong>Alcance por reel</strong>Línea base: unas 900 personas</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><strong>Fuentes:</strong> Google Business Profile (mayo–21 octubre 2026) y Meta Business Suite (1 noviembre 2025–21 octubre 2026, exportación por publicación de reels y stories) y Google Analytics 4 (febrero–21 octubre 2026). Las colaboraciones publicadas por otras cuentas no están incluidas en las cifras propias.</span>
+    <span>La Miga · Sanci Studio</span>
+  </div>
+</footer>
+
+</body>
+</html>
